@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.login_page">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearlayout1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:background="@color/colorDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/login"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:tint="@color/colorWhite"
+                    android:background="@drawable/circle"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:text="LOGIN"
+                    android:layout_marginBottom="30dp"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageview1"
+                android:layout_centerHorizontal="true"
+                android:rotation="45"
+                android:layout_marginTop="-10dp"
+                android:layout_below="@+id/linearlayout1"
+                android:src="@drawable/square"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relativelayout1"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/imageview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/colorWhite"
+                    android:src="@drawable/id"
+                    android:padding="5dp"
+                    android:background="@color/colorDark"
+                    android:id="@+id/userIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+                <EditText
+                    android:id="@+id/edit_text_ssn"
+                    android:inputType="numberDecimal"
+                    android:textSize="14sp"
+                    android:paddingLeft="20dp"
+                    android:hint="Nationality Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@+id/userIcon"
+                    android:background="#dadada" />
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/relativelayout2"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/relativelayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/colorWhite"
+                    android:src="@drawable/password"
+                    android:padding="5dp"
+                    android:background="@color/colorDark"
+                    android:id="@+id/passwordIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_toRightOf="@+id/passwordIcon"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_text_password"
+                        android:textSize="14sp"
+                        android:paddingLeft="20dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#dadada" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativelayout3"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@+id/relativelayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/checkbox_rememberme"
+                android:textColor="#808080"
+                android:layout_centerVertical="true"
+                android:text="Remember me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+         <Button
+             android:id="@+id/button_signin"
+             android:textColor="@color/colorWhite"
+             android:text="SIGN IN"
+             android:fontFamily="sans-serif-condensed-medium"
+             android:layout_marginTop="15dp"
+             android:layout_marginRight="30dp"
+             android:layout_marginLeft="30dp"
+             android:background="@color/colorDark"
+             android:layout_below="@+id/relativelayout3"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:theme="@style/progressBarTheme"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/button_signin"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

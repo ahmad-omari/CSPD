@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainFragments.profile">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/gradient_opp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/michael"
+                android:layout_centerHorizontal="true"
+                android:elevation="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="85dp"
+                    app:contentPadding="15dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Michael Scofiled"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textColor="@color/colorDark"
+                            android:layout_marginTop="60dp"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/address_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Address : "
+                                android:textSize="18sp"
+                                android:textColor="@color/colorDark"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/address"
+                                android:layout_toRightOf="@+id/address_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chipping Norton, United Kingdom"
+                                android:textSize="18sp"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/tel_view"
+                                android:layout_below="@+id/address_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tel : "
+                                android:textSize="18sp"
+                                android:textColor="@color/colorDark"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/country_code"
+                                android:layout_below="@+id/address_view"
+                                android:layout_toRightOf="@+id/tel_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+ (962) "
+                                android:textSize="18sp"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/telephone"
+                                android:layout_below="@+id/address_view"
+                                android:layout_toRightOf="@+id/country_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="799872637"
+                                android:textSize="18sp"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:layout_below="@+id/tel_view"
+                                android:id="@+id/ssn_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SSN : "
+                                android:textSize="18sp"
+                                android:textColor="@color/colorDark"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/ssn"
+                                android:layout_below="@+id/tel_view"
+                                android:layout_toRightOf="@+id/ssn_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="723849203"
+                                android:textSize="18sp"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:layout_below="@+id/ssn_view"
+                                android:id="@+id/email_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Email : "
+                                android:textSize="18sp"
+                                android:textColor="@color/colorDark"
+                                android:layout_marginTop="20dp"/>
+
+                            <TextView
+                                android:id="@+id/email"
+                                android:layout_below="@+id/ssn_view"
+                                android:layout_toRightOf="@+id/email_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="michael@gmail.com"
+                                android:textSize="18sp"
+                                android:layout_marginTop="20dp"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
