@@ -6,4 +6,31 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_map_location">Map</string>
+    <string-array name="blood_type">
+        <item>-</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
+    <string-array name="governorates">
+        <item>-</item>
+        <item>أربد</item>
+        <item>جرش</item>
+        <item>عجلون</item>
+        <item>المفرق</item>
+        <item>عمان</item>
+        <item>الزرقاء</item>
+        <item>السلط</item>
+        <item>الكرك</item>
+        <item>معان</item>
+        <item>الطفيله</item>
+        <item>مادبه</item>
+        <item>العقبه</item>
+    </string-array>
 </resources>

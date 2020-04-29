@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".passport.damagedPassport">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:background="@color/colorDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/passport"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:tint="@color/colorWhite"
+                        android:background="@drawable/circle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:text="Damaged Passport"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="@color/colorWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/note_service"
+                        android:textColor="@color/colorDark"
+                        android:text="لذكور دفتر خدمه علم مؤجل:"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <Button
+                        android:id="@+id/btn_note_service"
+                        android:textColor="@color/colorWhite"
+                        android:text="تحميل صوره دفتر خدمه"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/note_service"
+                        android:background="@color/colorLight" />
+
+
+                    <ImageView
+                        android:id="@+id/dash_line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layerType="software"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/dash"
+                        android:layout_below="@+id/btn_note_service"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/acceptance_book_prom"
+                        android:textColor="@color/colorDark"
+                        android:text="كتاب موافقه من القيادة العامه للعسكريين وزوجاتهم:"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <Button
+                        android:id="@+id/btn_acceptance_book"
+                        android:textColor="@color/colorWhite"
+                        android:text="تحميل صورة كتاب موافقه"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/acceptance_book_prom"
+                        android:background="@color/colorLight" />
+
+
+                    <ImageView
+                        android:id="@+id/dash_line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layerType="software"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/dash"
+                        android:layout_below="@+id/btn_acceptance_book"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/dam_pass"
+                        android:textColor="@color/colorDark"
+                        android:text="جواز السفر التالف:"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <Button
+                        android:id="@+id/btn_damaged_pass"
+                        android:textColor="@color/colorWhite"
+                        android:text="تحميل صوره جواز السفر"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/dam_pass"
+                        android:background="@color/colorLight" />
+
+
+                    <ImageView
+                        android:id="@+id/dash_line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layerType="software"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/dash"
+                        android:layout_below="@+id/btn_damaged_pass"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/id_c"
+                        android:textColor="@color/colorDark"
+                        android:text="البطاقة الشخصية:"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <Button
+                        android:id="@+id/btn_personal_id_card"
+                        android:textColor="@color/colorWhite"
+                        android:text="تحميل صوره البطاقة الشخصية"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/id_c"
+                        android:background="@color/colorLight" />
+
+
+                    <ImageView
+                        android:id="@+id/dash_line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layerType="software"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/dash"
+                        android:layout_below="@+id/btn_personal_id_card"/>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/cancel"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorDark"
+                        android:text="Cancel" />
+
+
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:id="@+id/btn_get_renew_form"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="#228b22"
+                        android:layout_toRightOf="@+id/cancel"
+                        android:text="Submit"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

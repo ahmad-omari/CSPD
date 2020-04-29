@@ -15,5 +15,9 @@
         <item name="colorAccent">@color/colorProgreeBar</item>
     </style>
 
+    <style name="calenderTheme">
+        <item name="colorAccent">@color/colorCal</item>
+    </style>
+
 
 </resources>

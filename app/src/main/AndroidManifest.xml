@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gp.cspd">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -16,7 +15,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".familyBook.firstTimeFamilyBook"></activity>
+        <activity android:name=".passport.damagedPassport" />
+        <activity android:name=".passport.replacementOfLostPassport" />
+        <activity android:name=".passport.firstTimePassport" />
+        <activity android:name=".IdCard.damagedReplacementCard" />
+        <activity android:name=".IdCard.renewIdCard" />
+        <activity android:name=".passport.passportForms" />
+        <activity android:name=".otherServices.otherServicesForms" />
+        <activity android:name=".IdCard.idCardForms" />
+        <activity android:name=".familyBook.familyBookForms" />
+        <activity android:name=".deathCertificate.deathForms" />
+        <activity android:name=".birthCertificate.birthForms" />
+        <activity android:name=".signUp.signUp" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,7 +42,7 @@
 
         <activity
             android:name=".mainFragments.mapLocation"
-            android:label="@string/title_activity_map_location"></activity>
+            android:label="@string/title_activity_map_location" />
         <activity android:name=".mainFragments.MapLocations" />
         <activity android:name=".mainFragments.forms" />
         <activity android:name=".mainFragments.settings" />

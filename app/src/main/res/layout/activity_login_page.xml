@@ -17,36 +17,36 @@
 
 
         <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayout1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@color/colorDark"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/linearlayout1"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:background="@color/colorDark"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/login"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:tint="@color/colorWhite"
+                android:background="@drawable/circle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
 
-                <ImageView
-                    android:src="@drawable/login"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:tint="@color/colorWhite"
-                    android:background="@drawable/circle"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-
-                <TextView
-                    android:text="LOGIN"
-                    android:layout_marginBottom="30dp"
-                    android:textSize="24sp"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:textColor="@color/colorWhite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+            <TextView
+                android:text="LOGIN"
+                android:layout_marginBottom="30dp"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageview1"
@@ -153,8 +153,8 @@
 
          <Button
              android:id="@+id/button_signin"
-             android:textColor="@color/colorWhite"
              android:text="SIGN IN"
+             android:textColor="@color/colorWhite"
              android:fontFamily="sans-serif-condensed-medium"
              android:layout_marginTop="15dp"
              android:layout_marginRight="30dp"
@@ -164,11 +164,44 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
 
+            <ImageView
+                android:id="@+id/dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layerType="software"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/dash"
+                android:layout_below="@+id/button_signin"/>
+
+            <TextView
+                android:id="@+id/sign_up_prompt"
+                android:textColor="@color/colorDark"
+                android:text="Dont have an account? "
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dash_line"/>
+
+            <TextView
+                android:textColor="#0000FF"
+                android:text="Sign Up"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/sign_up_text"
+                android:layout_toRightOf="@+id/sign_up_prompt"
+                android:layout_below="@+id/dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <ProgressBar
                 android:id="@+id/progress_circular"
                 android:theme="@style/progressBarTheme"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/button_signin"
+                android:layout_below="@+id/sign_up_prompt"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

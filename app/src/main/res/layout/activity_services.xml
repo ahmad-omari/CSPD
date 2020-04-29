@@ -71,7 +71,7 @@
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
                                     android:layout_centerInParent="true"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/id_card"
                                     />
 
                                 <TextView
@@ -88,7 +88,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_take_photo"
+                                    android:id="@+id/btn_id_card"
                                     android:background="@android:color/transparent"/>
 
 
@@ -113,7 +113,7 @@
                                     android:id="@+id/image_view2"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/passport"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -129,7 +129,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_choose_photo"
+                                    android:id="@+id/btn_passport"
                                     android:background="@android:color/transparent"/>
                             </RelativeLayout>
 
@@ -159,7 +159,7 @@
                                     android:id="@+id/image_view3"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/birth_certificate"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -175,7 +175,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_scan"
+                                    android:id="@+id/btn_birth_certificate"
                                     android:background="@android:color/transparent"/>
                             </RelativeLayout>
 
@@ -197,7 +197,7 @@
                                     android:id="@+id/image_view4"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/death_certificate"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -213,7 +213,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_help"
+                                    android:id="@+id/btn_death_certificate"
                                     android:background="@android:color/transparent"/>
                             </RelativeLayout>
 
@@ -243,7 +243,7 @@
                                     android:id="@+id/image_view5"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/family_book"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -259,7 +259,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_setting"
+                                    android:id="@+id/btn_family_book"
                                     android:background="@android:color/transparent"/>
                             </RelativeLayout>
 
@@ -281,7 +281,7 @@
                                     android:id="@+id/image_view6"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/ic_apps_black_24dp"
+                                    android:src="@drawable/service"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -297,7 +297,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/btn_info"
+                                    android:id="@+id/btn_other_services"
                                     android:background="@android:color/transparent"/>
                             </RelativeLayout>
 
