@@ -10,6 +10,7 @@ public class User {
     private String livingPlace;
     private String bloodType;
     private String email;
+    private String dob;
     private int phoneNO;
     private Address userAddress;
     private UserAccount userAccount;
@@ -29,6 +30,14 @@ public class User {
         this.userAddress = new Address();
         this.userAccount = new UserAccount(ssn,password);
         this.authinticationImage = new UserAuthinticationImage();
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String[] getNameEnglish4Parts() {

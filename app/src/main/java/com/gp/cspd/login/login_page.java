@@ -1,19 +1,28 @@
 package com.gp.cspd.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.gp.cspd.Database.AccountLoged;
 import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
-import com.gp.cspd.signUp.signUp;
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +30,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     CheckBox rememberMe;
     ProgressBar progressBar;
     TextView signUp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +53,12 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button_signin:
-                String ssnStr=ssn.getText().toString().trim();
-                String passwordStr=password.getText().toString().trim();
-                login(ssnStr,passwordStr);
-                progressBar.setVisibility(ProgressBar.VISIBLE);
-                startActivity(new Intent(login_page.this, MainActivity.class));
-                finish();
+                    String ssnStr=ssn.getText().toString().trim();
+                    String passwordStr=password.getText().toString().trim();
+                    login(ssnStr,passwordStr);
+               //     progressBar.setVisibility(ProgressBar.VISIBLE);
+              //      startActivity(new Intent(login_page.this, MainActivity.class));
+              //      finish();
                 break;
             case R.id.sign_up_text:
                 startActivity(new Intent(login_page.this, com.gp.cspd.signUp.signUp.class));
@@ -56,10 +66,34 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                 break;
         }
     }
-    private static void login(String ssnStr,String passwordStr){
-        if (UserVerification.isValidSSN(ssnStr) && UserVerification.isValidPassword(passwordStr)){
+    private void login(final String ssnStr, final String passwordStr) {
+        DatabaseReference mDatabase;
+        String strRef = "users/"+ssnStr+"/account/password";
+        mDatabase = FirebaseDatabase.getInstance().getReference(strRef);
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String password = (String) dataSnapshot.getValue();
 
-        }
+                if (password != null && password.equals(passwordStr)){
+                    accountHandler(ssnStr);
+                    startActivity(new Intent(login_page.this, MainActivity.class));
+                    finish();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Invalid account.", Toast.LENGTH_LONG).show();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(), "Error try again later.", Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+    private void accountHandler(String ssn){
+        AccountLoged loged = AccountLoged.getInstance();
+        loged.setSsn(ssn);
+    }
+
 
 }
