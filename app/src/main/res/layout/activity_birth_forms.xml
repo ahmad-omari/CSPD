@@ -39,7 +39,7 @@
                     android:layout_height="50dp"/>
 
                 <TextView
-                    android:text="Birth Certificate Forms"
+                    android:text="شهادة الميلاد"
                     android:layout_marginBottom="30dp"
                     android:textSize="24sp"
                     android:fontFamily="sans-serif-condensed-medium"
@@ -49,33 +49,40 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/show_my_form"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorDark"
+                    android:text="اضهار الطلب" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Button
                     android:id="@+id/first_time_birth_certificate"
                     android:textSize="14sp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorDark"
-                    android:text="Get birth certificate Forms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RelativeLayout
+                    android:textColor="#ffffff"
+                    android:text="رفع طلب شهادة الميلاد"
+                    android:background="@color/colorDark"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
             <LinearLayout

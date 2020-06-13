@@ -43,7 +43,7 @@
                         android:layout_height="50dp"/>
 
                     <TextView
-                        android:text="Damaged Passport"
+                        android:text="استبدال هوية محطمة او مفقوده"
                         android:layout_marginBottom="30dp"
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-condensed-medium"
@@ -226,6 +226,24 @@
 
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/show_my_form"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorDark"
+                        android:text="اضهار الطلب" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" >
@@ -240,7 +258,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:background="@color/colorDark"
-                        android:text="Cancel" />
+                        android:text="الغاء"  />
 
 
                     <Button
@@ -255,7 +273,7 @@
                         android:layout_weight="1"
                         android:background="#228b22"
                         android:layout_toRightOf="@+id/cancel"
-                        android:text="Submit"/>
+                        android:text="طلب"/>
 
                 </LinearLayout>
 

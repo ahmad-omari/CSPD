@@ -29,6 +29,8 @@ public class splashScreen extends AppCompatActivity {
 
 
 
+/*
+
         c=findViewById(R.id.c);
         s=findViewById(R.id.s);
         p=findViewById(R.id.p);
@@ -44,6 +46,8 @@ public class splashScreen extends AppCompatActivity {
         p.setAnimation(animationP);
         d.setAnimation(animationD);
 
+
+ */
         getSplash();
 
     }

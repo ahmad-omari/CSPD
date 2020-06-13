@@ -8,39 +8,45 @@
         <item
             android:id="@+id/servises"
             android:icon="@drawable/ic_widgets_black_24dp"
-            android:title="Services" />
+            android:title="الخدمات" />
 
         <item
             android:id="@+id/profile"
             android:icon="@drawable/ic_profile"
-            android:title="Profile" />
+            android:title="الحساب" />
 
         <item
             android:id="@+id/forms"
             android:icon="@drawable/ic_format_shapes_black_24dp"
-            android:title="Forms" />
+            android:title="الطلبات" />
 
         <item
             android:id="@+id/locations"
             android:icon="@drawable/ic_map_black_24dp"
-            android:title="CSPD Locations" />
+            android:title="مواقع دائرة الأحوال المدنية" />
     </group>
 
-    <item android:title="Information">
+    <item android:title="معلومات التطبيق">
         <menu>
             <item
                 android:id="@+id/info"
                 android:icon="@drawable/ic_info_black_24dp"
-                android:title="Info" />
+                android:title="استعلام" />
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_group_black_24dp"
+                android:title="من نحن" />
         </menu>
+
+
     </item>
 
-    <item android:title="Account">
+    <item android:title="الحساب">
         <menu>
             <item
                 android:id="@+id/logout"
                 android:icon="@drawable/logout"
-                android:title="Logout" />
+                android:title="تسجيل الخروج" />
         </menu>
     </item>
 

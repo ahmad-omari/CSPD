@@ -4,9 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/logo_splash"
     tools:context=".Startup.splashScreen">
 
+
+    <TextView
+        android:textColor="@color/colorDark"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAlignment="center"
+        android:text="Copyright 2020 Google LLC. All rights reserved."
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+<!--
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +30,7 @@
             android:fontFamily="cursive"
             android:textColor="#ffffff"
             android:textSize="64sp"
-            android:text="C"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -26,7 +38,7 @@
             android:fontFamily="cursive"
             android:textColor="#ffffff"
             android:textSize="64sp"
-            android:text="S"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -34,7 +46,7 @@
             android:fontFamily="cursive"
             android:textColor="#ffffff"
             android:textSize="64sp"
-            android:text="P"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -42,9 +54,9 @@
             android:fontFamily="cursive"
             android:textColor="#ffffff"
             android:textSize="64sp"
-            android:text="D"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
+-->
 </RelativeLayout>

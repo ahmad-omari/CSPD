@@ -4,13 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.gp.cspd.Database.AccountLoged;
 import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
+import com.gp.cspd.signUp.signUp;
 
 public class login_page extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,6 +53,7 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
         progressBar.setVisibility(ProgressBar.INVISIBLE);
 
 
+      //  imagePickerDialog();
     }
 
     @Override
@@ -93,6 +100,17 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     private void accountHandler(String ssn){
         AccountLoged loged = AccountLoged.getInstance();
         loged.setSsn(ssn);
+    }
+
+    public void imagePickerDialog(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.form_style);
+        dialog.setTitle("Image view info");
+
+
+        dialog.show();
     }
 
 

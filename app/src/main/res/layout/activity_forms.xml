@@ -17,6 +17,15 @@
         android:layout_margin="15dp"
         app:cardCornerRadius="10dp">
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecycleViewForms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

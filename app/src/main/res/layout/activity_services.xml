@@ -60,6 +60,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -78,7 +79,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
-                                    android:text="ID Card"
+                                    android:text="الهوية المدنية"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view1"
@@ -103,6 +104,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -119,7 +121,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Passport"
+                                    android:text="جواز السفر"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view2"
@@ -149,6 +151,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -165,7 +168,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Birth Certificate"
+                                    android:text="شهادة الميلاد"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view3"
@@ -187,6 +190,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -197,13 +201,13 @@
                                     android:id="@+id/image_view4"
                                     android:layout_width="64dp"
                                     android:layout_height="64dp"
-                                    android:src="@drawable/death_certificate"
+                                    android:src="@drawable/death_ico"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Death Certificate"
+                                    android:text="شهادة الوفاة"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view4"
@@ -232,6 +236,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:orientation="vertical">
 
@@ -249,7 +254,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Family Book"
+                                    android:text="دفتر العائلة"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view5"
@@ -271,6 +276,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
@@ -287,7 +293,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Other Services"
+                                    android:text="خدمات أخرى"
                                     android:textSize="18sp"
                                     android:textColor="#537895"
                                     android:layout_below="@+id/image_view6"

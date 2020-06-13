@@ -1,25 +1,19 @@
-package com.gp.cspd.mainFragments;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.gp.cspd.forms;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,121 +26,60 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.gp.cspd.Database.AccountLoged;
+import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
-import com.gp.cspd.forms.RecycleViewForm;
-import com.gp.cspd.forms.RequestFormDB;
-import com.gp.cspd.signUp.signUp;
+import com.gp.cspd.mainFragments.profile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class forms extends Fragment {
-
+public class FormDialog {
     TextView ssnStr=null,arF=null,arS=null,arT=null,arFam=null,enF=null,enS=null,enT=null,enFam=null,
             arMom=null,enMom=null,birthPlace=null,dateOB=null,dola=null,mohafatha=null,hayy=null,streetBuild=null
             ,nearestPl=null,mil=null,gend=null,bloood=null,phon=null;
-    ImageView personalImage=null,rel1=null,rel2=null,rel3=null;
+
+    ImageView personalImage=null,rel1=null,rel2=null,rel3=null,rel4=null,rel5=null;
 
     View view;
 
     DatabaseReference mDatabase;
 
-    private  List<RequestFormDB> dbList = new ArrayList<>();
+    Context context;
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private String ord,typ;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.activity_forms,container,false);
-
-
-        String strRef = "Forms/order";
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference(strRef);
-        mDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                StringBuilder strB =new StringBuilder();
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-
-                    try {
-                        RequestFormDB rq = new RequestFormDB();
-
-                        StringBuilder stringBuilder = new StringBuilder();
-
-                        String oN = ds.child("order_name").getValue().toString();
-                        String oT = ds.child("order_type").getValue().toString();
-                        String stat = ds.child("status").getValue().toString();
-                        String ss = ds.child("ssn").getValue().toString();
-
-                        if (oN != null && oT != null && stat != null && ss != null) {
-                            AccountLoged al = AccountLoged.getInstance();
-                            if (ss.equals(al.getSsn())) {
-                                stringBuilder.append(oN + " " + oT);
-                                rq.setFormName(stringBuilder.toString());
-
-                                Log.d("Log9876","Added "+stringBuilder.toString());
-
-                                rq.setStatus(stat);
-
-                                if (!strB.toString().contains(oN + " " + oT + " " + stat))
-                                    dbList.add(rq);
-                                else
-                                    strB.append(oN + " " + oT + " " + stat);
-                                Log.d("lnnnn", dbList.size() + "");
-                                Log.d("333", "workkkkkkkkk" + oN + " " + oT + " " + stat);
-
-
-                                recyclerView = view.findViewById(R.id.RecycleViewForms);
-                                //recyclerView.setHasFixedSize(true);
-                                recyclerView.setHasFixedSize(true);
-                                // use a linear layout manager
-                                final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-                                recyclerView.setLayoutManager(layoutManager);
-
-                                // specify an adapter (see also next example)
-                                Log.d("lengtttt", dbList.size() + "");
-                                mAdapter = new RecycleViewForm(dbList);
-                                recyclerView.setAdapter(mAdapter);
-                            }
-
-                        }
-
-                    }  catch (Exception e) {
-                        Log.d("334", e.getMessage());
-                    }
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-
-
-
-
-
-        return view;
+    public FormDialog(Context context) {
+        this.context = context;
     }
 
-    private void showFormDialog() {
-        final Dialog dialog = new Dialog(getContext());
+    public String getOrd() {
+        return ord;
+    }
+
+    public void setOrd(String ord) {
+        this.ord = ord;
+    }
+
+    public String getTyp() {
+        return typ;
+    }
+
+    public void setTyp(String typ) {
+        this.typ = typ;
+    }
+
+    public void showFormDialog() {
+        final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.form_style);
+
 
         personalImage = dialog.findViewById(R.id.personal_image);
         rel1 = dialog.findViewById(R.id.related_img_1);
         rel2 = dialog.findViewById(R.id.related_img_2);
         rel3 = dialog.findViewById(R.id.related_img_3);
+        rel4 = dialog.findViewById(R.id.related_img_4);
+        rel5 = dialog.findViewById(R.id.related_img_5);
 
         ssnStr = dialog.findViewById(R.id.ssn_number);
 
@@ -180,6 +113,16 @@ public class forms extends Fragment {
 
 
         fillForm();
+        fillImages();
+
+        Button modyf = dialog.findViewById(R.id.mofy);
+        modyf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context.getApplicationContext(), MainActivity.class));
+            }
+        });
+
         Button button=dialog.findViewById(R.id.ok);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,6 +131,43 @@ public class forms extends Fragment {
             }
         });
         dialog.show();
+    }
+
+    private void fillImages() {
+  /*
+        String strRef = "Forms/order";
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference(strRef);
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                StringBuilder strB =new StringBuilder();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                    try {
+                        String oN = ds.child("order_name").getValue().toString();
+                        String oT = ds.child("order_type").getValue().toString();
+                        String stat = ds.child("status").getValue().toString();
+
+                        if (oN != null && oT != null && stat != null) {
+                            myPicForm(oN,oT);
+                        }
+
+                    }  catch (Exception e) {
+                        Log.d("334", e.getMessage());
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+*/
+        if (ord!= null && typ!=null)
+            myPicForm(ord,typ);
     }
 
     private void fillForm() {
@@ -221,6 +201,99 @@ public class forms extends Fragment {
                             Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
                             if (bitmap != null){
                                 personalImage.setImageBitmap(bitmap);
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("LOG2","Filed retival image");
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void myPicForm(String order, String type){
+        Log.d("6123","function invoked "+order+" "+type);
+        AccountLoged loged = AccountLoged.getInstance();
+        if (type.equals("Password")){
+
+            if (order.equals("renew")){
+                getPictureByName(loged.getSsn()+"firstPassportNote.jpg",1);
+                getPictureByName(loged.getSsn()+"firstPassportBook.jpg",2);
+                getPictureByName(loged.getSsn()+"firstPassportForeign.jpg",3);
+            }else if (order.equals("damaged")){
+                getPictureByName(loged.getSsn()+"notePassport.jpg",1);
+                getPictureByName(loged.getSsn()+"bookPassport.jpg",2);
+                getPictureByName(loged.getSsn()+"damagedPassport.jpg",3);
+                getPictureByName(loged.getSsn()+"personalImgPassport.jpg",4);
+            }else if (order.equals("lost")){
+                getPictureByName(loged.getSsn()+"notePassport.jpg",1);
+                getPictureByName(loged.getSsn()+"bookPassport.jpg",2);
+                getPictureByName(loged.getSsn()+"secAcceptPassport.jpg",3);
+                getPictureByName(loged.getSsn()+"lostImgPassport.jpg",4);
+            }
+
+        }else if (type.equals("Family Book")){
+
+            if (order.equals("first time")){
+                getPictureByName(loged.getSsn()+"marridFamilyBook.jpg",1);
+                getPictureByName(loged.getSsn()+"picFamilyBook.jpg",2);
+                getPictureByName(loged.getSsn()+"imgFamilyBook.jpg",3);
+                getPictureByName(loged.getSsn()+"passportImgFamilyBook.jpg",4);
+                getPictureByName(loged.getSsn()+"idBothFamilyBook.jpg",5);
+            }
+
+        }else if (type.equals("ID Card")){
+
+            if (order.equals("renew")){
+                getPictureByName(loged.getSsn()+"renewIdCardPersonalImage.jpg",1);
+                Log.d("LogRen","in function");
+            }else if (order.equals("damaged or replacement")){
+                getPictureByName(loged.getSsn()+"damgedIdCardPersonal.jpg",1);
+                getPictureByName(loged.getSsn()+"damgedIdCardWritten.jpg",2);
+                getPictureByName(loged.getSsn()+"damgedIdCardExplain.jpg",3);
+            }
+        }
+    }
+
+    private void getPictureByName(String picName, final int picIndex) {
+
+        Log.d("Log21","names "+picName);
+
+        AccountLoged al = AccountLoged.getInstance();
+        String strRef = "UserImageFolder/"+picName;
+        StorageReference reference = FirebaseStorage.getInstance().getReference().child(strRef);
+        try {
+            final File file = File.createTempFile(al.getSsn()+"profilePicture","jpg");
+            reference.getFile(file)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Log.e("LOG1","Success retival image");
+                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                            if (bitmap != null){
+                                Log.e("Log22","bitmap not null");
+                                switch (picIndex){
+                                    case 1:
+                                        rel1.setImageBitmap(bitmap);
+                                        break;
+                                    case 2:
+                                        rel2.setImageBitmap(bitmap);
+                                        break;
+                                    case 3:
+                                        rel3.setImageBitmap(bitmap);
+                                        break;
+                                    case 4:
+                                        rel4.setImageBitmap(bitmap);
+                                        break;
+                                    case 5:
+                                        rel5.setImageBitmap(bitmap);
+                                        break;
+                                }
                             }
                         }
                     })
@@ -573,5 +646,6 @@ public class forms extends Fragment {
             }
         });
     }
+
 
 }

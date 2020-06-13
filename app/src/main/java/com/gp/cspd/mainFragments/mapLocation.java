@@ -38,8 +38,21 @@ public class mapLocation extends Fragment {
                 mMap=googleMap;
 
                 LatLng CSPDLoc = new LatLng(32.555346, 35.855453);
-                mMap.addMarker(new MarkerOptions().position(CSPDLoc).title("CSPD"));
+                mMap.addMarker(new MarkerOptions().position(CSPDLoc).title("الاحوال المدنيه والجوازات اربد"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(CSPDLoc));
+
+                LatLng CSPDLoc1 = new LatLng(32.491764, 35.883213);
+                mMap.addMarker(new MarkerOptions().position(CSPDLoc1).title("الاحوال المدنيه والجوازات اربد/الحصن"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(CSPDLoc1));
+
+                LatLng CSPDLoc2 = new LatLng(32.028365, 35.835728);
+                mMap.addMarker(new MarkerOptions().position(CSPDLoc2).title("الاحوال المدنيه والجوازات عمان/صويلح"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(CSPDLoc2));
+
+                LatLng CSPDLoc3 = new LatLng(31.881428, 36.830892);
+                mMap.addMarker(new MarkerOptions().position(CSPDLoc3).title("الاحوال المدنيه والجوازات الزرقاء"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(CSPDLoc3));
+
             }
         });
 

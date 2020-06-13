@@ -344,7 +344,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
     public void signUp(){
         fillData();
         uploadImages();
-        //uploadUserInfo();
+        uploadUserInfo();
 
         Toast.makeText(getApplicationContext(),"Account created",Toast.LENGTH_LONG).show();
         startActivity(new Intent(signUp.this,login_page.class));

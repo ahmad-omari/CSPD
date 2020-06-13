@@ -20,7 +20,9 @@ import android.widget.Toast;
 import com.gp.cspd.Database.AccountLoged;
 import com.gp.cspd.Database.DatabaseForm;
 import com.gp.cspd.Database.DatabaseUserImage;
+import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
+import com.gp.cspd.forms.FormDialog;
 import com.gp.cspd.forms.FormsRequest;
 import com.gp.cspd.forms.RenewIdCardForm;
 import com.gp.cspd.signUp.signUp;
@@ -41,6 +43,8 @@ public class renewIdCard extends AppCompatActivity implements View.OnClickListen
         uriIMG = null;
         imgBitmap = null;
 
+        findViewById(R.id.cancel).setOnClickListener(this);
+        findViewById(R.id.show_my_form).setOnClickListener(this);
         findViewById(R.id.personal_picture).setOnClickListener(this);
         findViewById(R.id.btn_get_renew_form).setOnClickListener(this);
     }
@@ -54,6 +58,16 @@ public class renewIdCard extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.cancel:
+                startActivity(new Intent(renewIdCard.this, MainActivity.class));
+                finish();
+                break;
+
+            case R.id.show_my_form:
+                FormDialog formDialog = new FormDialog(this);
+                formDialog.showFormDialog();
+                break;
+
             case R.id.personal_picture:
                 uploadImage();
                 break;
@@ -69,17 +83,14 @@ public class renewIdCard extends AppCompatActivity implements View.OnClickListen
             Toast.makeText(getApplicationContext(),"Please choose image...",Toast.LENGTH_LONG).show();
         }else {
             uploadImages();
-            RenewIdCardForm renewIdCardForm = new RenewIdCardForm();
-           renewIdCardForm.setBitmap(imgBitmap);
-            FormsRequest request = FormsRequest.getInstance();
-            request.addForm(renewIdCardForm);
-            setFormDB(renewIdCardForm.getFormName());
+            setFormDB("renew");
             Toast.makeText(getApplicationContext(),"Submitted successfully",Toast.LENGTH_LONG).show();
         }
     }
 
     private void setFormDB(String fName) {
         DatabaseForm databaseForm = new DatabaseForm();
+        databaseForm.setOrderName("ID Card");
         databaseForm.setFormName(fName);
         databaseForm.uploadDB();
     }
