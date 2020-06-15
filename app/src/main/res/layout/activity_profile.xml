@@ -28,7 +28,6 @@
                 android:id="@+id/profile_pic"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/michael"
                 android:layout_centerHorizontal="true"
                 android:elevation="1dp"/>
 
@@ -72,350 +71,363 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:id="@+id/ar_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Arabic name : "
+                                android:text="الاسم بالعربية : "
+                                android:layout_marginLeft="5dp"
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/ar_name"
-                                android:layout_toRightOf="@+id/ar_name_view"
+                                android:layout_toLeftOf="@+id/ar_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Name in arabic"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_ar_name"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_toRightOf="@+id/ar_name"
+                                android:layout_marginTop="13dp"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/ar_name_view"
                                 android:id="@+id/ar_mom_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Arabic Mothers name : "
+                                android:layout_marginLeft="5dp"
+                                android:text="اسم الام بالعربية : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:layout_below="@+id/ar_name_view"
                                 android:id="@+id/ar_mom_name"
-                                android:layout_toRightOf="@+id/ar_mom_name_view"
+                                android:layout_toLeftOf="@+id/ar_mom_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="mama in arabic"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_ar_mom_name"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/ar_name_view"
-                                android:layout_toRightOf="@+id/ar_mom_name"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/ar_mom_name_view"
                                 android:id="@+id/en_mom_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="English Mothers name : "
+                                android:layout_marginLeft="5dp"
+                                android:text="اسم الام بالانجليزية : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:layout_below="@+id/ar_mom_name_view"
                                 android:id="@+id/en_mom_name"
-                                android:layout_toRightOf="@+id/en_mom_name_view"
+                                android:layout_toLeftOf="@+id/en_mom_name_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="mama in english"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_en_mom_name"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/ar_mom_name_view"
-                                android:layout_toRightOf="@+id/en_mom_name"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/en_mom_name_view"
                                 android:id="@+id/address_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Address : "
+                                android:layout_marginLeft="5dp"
+                                android:text="العنوان : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:layout_below="@+id/en_mom_name_view"
                                 android:id="@+id/address"
-                                android:layout_toRightOf="@+id/address_view"
+                                android:layout_toLeftOf="@+id/address_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Chipping Norton, United Kingdom"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_address"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/en_mom_name_view"
-                                android:layout_toRightOf="@+id/address"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/address_view"
                                 android:id="@+id/birth_place_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Birth place : "
+                                android:layout_marginLeft="5dp"
+                                android:text="مكان الولادة : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:layout_below="@+id/address_view"
                                 android:id="@+id/birth_place"
-                                android:layout_toRightOf="@+id/birth_place_view"
+                                android:layout_toLeftOf="@+id/birth_place_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Birth place "
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_birthplace"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/address_view"
-                                android:layout_toRightOf="@+id/birth_place"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:id="@+id/tel_view"
                                 android:layout_below="@+id/birth_place_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tel : "
+                                android:layout_marginLeft="5dp"
+                                android:text="الهاتف : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/country_code"
                                 android:layout_below="@+id/birth_place_view"
-                                android:layout_toRightOf="@+id/tel_view"
+
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="+ (962) "
-                                android:textSize="18sp"
+                                android:layout_toLeftOf="@+id/telp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <TextView
                                 android:id="@+id/telp"
                                 android:layout_below="@+id/birth_place_view"
-                                android:layout_toRightOf="@+id/country_code"
+                                android:layout_toLeftOf="@id/tel_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+
                                 android:text="799872637"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_tel"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/birth_place_view"
-                                android:layout_toRightOf="@+id/telp"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/tel_view"
                                 android:id="@+id/blood_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Blood type : "
+                                android:layout_marginLeft="5dp"
+                                android:text="زمره الدم : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/blood"
                                 android:layout_below="@+id/tel_view"
-                                android:layout_toRightOf="@+id/blood_view"
+                                android:layout_toLeftOf="@+id/blood_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="blood type"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_blood"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/tel_view"
-                                android:layout_toRightOf="@+id/blood"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/blood_view"
                                 android:id="@+id/ssn_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="SSN : "
+                                android:layout_marginLeft="5dp"
+                                android:text="الرقم الوطني : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/ssn"
                                 android:layout_below="@+id/blood_view"
-                                android:layout_toRightOf="@+id/ssn_view"
+                                android:layout_toLeftOf="@+id/ssn_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="723849203"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_ssn"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/blood_view"
-                                android:layout_toRightOf="@+id/ssn"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/ssn_view"
                                 android:id="@+id/gender_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Gender : "
+                                android:layout_marginLeft="5dp"
+                                android:text="الجنس : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/gender"
                                 android:layout_below="@+id/ssn_view"
-                                android:layout_toRightOf="@+id/gender_view"
+                                android:layout_toLeftOf="@+id/gender_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="male"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_gender"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/ssn_view"
-                                android:layout_toRightOf="@+id/gender"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/gender_view"
                                 android:id="@+id/email_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Email : "
+                                android:layout_marginLeft="5dp"
+                                android:text="البريد الالكتروني : "
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
 
                             <TextView
                                 android:id="@+id/email"
                                 android:layout_below="@+id/gender_view"
-                                android:layout_toRightOf="@+id/email_view"
+                                android:layout_toLeftOf="@+id/email_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="michael@gmail.com"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_email"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/gender_view"
-                                android:layout_toRightOf="@+id/email"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/email"
                                 android:id="@+id/password_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Password : "
+                                android:text="كلمه المرور : "
+                                android:layout_marginLeft="5dp"
                                 android:textSize="18sp"
                                 android:textColor="@color/colorDark"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_marginTop="13dp"/>
 
                             <TextView
                                 android:id="@+id/password"
                                 android:layout_below="@+id/email"
-                                android:layout_toRightOf="@+id/password_view"
+                                android:layout_toLeftOf="@+id/password_view"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="password"
-                                android:textSize="18sp"
+                                android:textSize="11sp"
                                 android:layout_marginTop="20dp"/>
 
                             <ImageView
                                 android:id="@+id/edit_password"
                                 android:layout_marginLeft="5dp"
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="13dp"
                                 android:layout_below="@+id/email"
-                                android:layout_toRightOf="@+id/password"
+                                android:layout_alignParentLeft="true"
                                 android:src="@drawable/ic_edit_dark_24dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>

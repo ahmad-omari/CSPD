@@ -60,10 +60,11 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button_signin:
-                    String ssnStr=ssn.getText().toString().trim();
-                    String passwordStr=password.getText().toString().trim();
-                    login(ssnStr,passwordStr);
-               //     progressBar.setVisibility(ProgressBar.VISIBLE);
+                progressBar.setVisibility(ProgressBar.VISIBLE);
+                String ssnStr=ssn.getText().toString().trim();
+                String passwordStr=password.getText().toString().trim();
+                login(ssnStr,passwordStr);
+
               //      startActivity(new Intent(login_page.this, MainActivity.class));
               //      finish();
                 break;
@@ -84,6 +85,14 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
 
                 if (password != null && password.equals(passwordStr)){
                     accountHandler(ssnStr);
+
+                    if (rememberMe.isChecked()){
+                        SharedPreferences sharedpreferences = getSharedPreferences("remember",Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putString("ssn", ssnStr);
+                        editor.commit();
+                    }
+
                     startActivity(new Intent(login_page.this, MainActivity.class));
                     finish();
                 }else {

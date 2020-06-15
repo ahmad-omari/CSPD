@@ -2,7 +2,9 @@ package com.gp.cspd.Startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.gp.cspd.Database.AccountLoged;
+import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
 import com.gp.cspd.login.login_page;
 
@@ -61,8 +65,18 @@ public class splashScreen extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(splashScreen.this, login_page.class));
-                finish();
+
+                SharedPreferences sharedpreferences = getSharedPreferences("remember", Context.MODE_PRIVATE);
+                String rememberedSSN = sharedpreferences.getString("ssn","0");
+                if (rememberedSSN.length()==10){
+                    AccountLoged loged = AccountLoged.getInstance();
+                    loged.setSsn(rememberedSSN);
+                    startActivity(new Intent(splashScreen.this, MainActivity.class));
+                    finish();
+                }else {
+                    startActivity(new Intent(splashScreen.this, login_page.class));
+                    finish();
+                }
             }
         });
         thread.start();
