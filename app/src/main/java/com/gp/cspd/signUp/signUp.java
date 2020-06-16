@@ -366,17 +366,17 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
             if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
                 showSuccessDialog();
             }else {
-                confirmPasswordET.setError("");
+                confirmPasswordET.setError("غير مطابق");
             }
         }else{
             if (ssnET==null || ssnET.length()!=10)
-                ssnET.setError("");
+                ssnET.setError("الرجاء ادخال عشر خانات");
 
             if (passwordET==null || passwordET.length()<6)
-                passwordET.setError("");
+                passwordET.setError("الرجاء ادخال ست خانات على الاقل");
 
             if (confirmPasswordET==null || confirmPasswordET.length()<6)
-                confirmPasswordET.setError("");
+                confirmPasswordET.setError("الرجاء ادخال ست خانات على الاقل");
 
             if (ar_name_1==null || ar_name_1.length()<2)
                 ar_name_1.setError("");
