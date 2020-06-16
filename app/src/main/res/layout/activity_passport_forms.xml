@@ -54,40 +54,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Button
                     android:id="@+id/renew_passport"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif-condensed-medium"
+                    android:background="@color/colorDark"
+                    android:textSize="18sp"
+                    android:textColor="#ffff"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorDark"
                     android:text="تجديد جواز السفر"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layerType="software"
-                    android:src="@drawable/dash"/>
-            </LinearLayout>
 
 
             <LinearLayout
@@ -95,40 +75,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Button
                     android:id="@+id/damaged_allowance_passport"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif-condensed-medium"
+                    android:background="@color/colorDark"
+                    android:textSize="18sp"
+                    android:textColor="#ffff"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorDark"
                     android:text="استبدال جواز سفر تالف"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
+
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layerType="software"
-                    android:src="@drawable/dash"/>
-            </LinearLayout>
+
 
 
             <LinearLayout
@@ -136,43 +97,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Button
                     android:id="@+id/replacement_of_lost_passport"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif-condensed-medium"
+                    android:background="@color/colorDark"
+                    android:textSize="18sp"
+                    android:textColor="#ffff"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorDark"
                     android:text="بدل فاقد"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layerType="software"
-                    android:src="@drawable/dash"/>
-            </LinearLayout>
-
-
-
 
         </LinearLayout>
 

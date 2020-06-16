@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -12,6 +13,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +44,8 @@ public class profile extends Fragment {
     CircleImageView profilePicture;
     TextView address,phone,ssn,email,arName,momAR,momEN,birthPlace,bloodType,gender,password,enName;
 
+    ImageView edit_ar_name,edit_mom_ar_name,edit_mom_en_name,edit_address,edit_birth_place,edit_tel,edit_blood,edit_ssn,edit_gender,edit_email,edit_password;
+
     DatabaseReference mDatabase;
 
     @Nullable
@@ -63,6 +70,86 @@ public class profile extends Fragment {
         gender=view.findViewById(R.id.gender);
         password=view.findViewById(R.id.password);
 
+        edit_ar_name = view.findViewById(R.id.edit_ar_name);
+        edit_mom_ar_name = view.findViewById(R.id.edit_ar_mom_name);
+        edit_mom_en_name= view.findViewById(R.id.edit_en_mom_name);
+        edit_address = view.findViewById(R.id.edit_address);
+        edit_birth_place = view.findViewById(R.id.edit_birthplace);
+        edit_tel= view.findViewById(R.id.edit_tel);
+        edit_blood=view.findViewById(R.id.edit_blood);
+        edit_ssn=view.findViewById(R.id.edit_ssn);
+        edit_gender=view.findViewById(R.id.edit_gender);
+        edit_email=view.findViewById(R.id.edit_email);
+        edit_password = view.findViewById(R.id.edit_password);
+
+        edit_ar_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(1);
+            }
+        });
+        edit_mom_ar_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("LogEditMomNam","yes in button");
+                editProfile(2);
+            }
+        });
+        edit_mom_en_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(3);
+            }
+        });
+        edit_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(4);
+            }
+        });
+        edit_birth_place.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(5);
+            }
+        });
+        edit_tel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(6);
+            }
+        });
+        edit_blood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(7);
+            }
+        });
+        edit_ssn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(8);
+            }
+        });
+        edit_gender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(9);
+            }
+        });
+        edit_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(10);
+            }
+        });
+        edit_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editProfile(11);
+            }
+        });
+
         getProfilePic();
 
         getEnName();
@@ -83,6 +170,92 @@ public class profile extends Fragment {
         return view;
     }
 
+    private void editProfile(int num){
+        final int choice = num;
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.edit_dialog);
+
+        final EditText editText = dialog.findViewById(R.id.edittxt);
+        Button ed = dialog.findViewById(R.id.btn_edit);
+        Button canc = dialog.findViewById(R.id.btn_cancel);
+        canc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        ed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String editString = editText.getText().toString();
+                Log.d("strVal",editString +" is the value of "+choice);
+                if (editString == null || editString.equals("")){
+                    Toast.makeText(getContext(),"بيانات غير صحيحه",Toast.LENGTH_LONG).show();
+                }else {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    AccountLoged al =AccountLoged.getInstance();
+                    DatabaseReference myRef = database.getReference("users").child(al.getSsn());
+                    switch (choice) {
+                        case 1:
+                            String [] ar = editString.split("");
+                            if (ar.length!=4){
+                                Toast.makeText(getContext(),"الرجاء ادخال الاسم من اربع مقاطع",Toast.LENGTH_LONG).show();
+                            }else {
+                                DatabaseReference myRef9 = myRef.child("arabicName");
+                                myRef9.setValue(editString);
+                            }
+                            break;
+                        case 2:
+                            Log.d("case 2",editString +" is the value of "+choice);
+                            DatabaseReference myRef2 = myRef.child("mothersNameArabic");
+                            myRef2.setValue(editString);
+                            break;
+                        case 3:
+                            DatabaseReference myRef1 = myRef.child("mothersNameEnglish");
+                            myRef1.setValue(editString);
+                            break;
+                        case 4:
+                            DatabaseReference myRef5 = myRef.child("livingPlace");
+                            myRef5.setValue(editString);
+                            break;
+                        case 5:
+                            DatabaseReference myRef4 = myRef.child("birthPlace");
+                            myRef4.setValue(editString);
+                            break;
+                        case 6:
+                            DatabaseReference myRef8 = myRef.child("phoneNO");
+                            myRef8.setValue(editString);
+                            break;
+                        case 7:
+                            DatabaseReference myRef6 = myRef.child("bloodType");
+                            myRef6.setValue(editString);
+                            break;
+                        case 8:
+                            DatabaseReference myRef18 = myRef.child("account").child("ssn");
+                            myRef18.setValue(editString);
+                            break;
+                        case 9:
+                            DatabaseReference myRef3 = myRef.child("gender");
+                            myRef3.setValue(editString);
+                            break;
+                        case 10:
+                            DatabaseReference myRef7 = myRef.child("email");
+                            myRef7.setValue(editString);
+                            break;
+                        case 11:
+                            DatabaseReference myRef19 = myRef.child("account").child("password");
+                            myRef19.setValue(editString);
+                            break;
+                    }
+                    dialog.dismiss();
+                }
+
+            }
+        });
+        dialog.show();
+    }
     private void getProfilePic() {
         AccountLoged al = AccountLoged.getInstance();
         String strRef = "UserImageFolder/"+al.getSsn()+"profilePicture.jpg";

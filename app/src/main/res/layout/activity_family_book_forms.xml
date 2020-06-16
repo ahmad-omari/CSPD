@@ -54,29 +54,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <Button
                     android:id="@+id/first_time_family_book"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif-condensed-medium"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorDark"
+                    android:background="@color/colorDark"
+                    android:textSize="18sp"
+                    android:textColor="#ffff"
                     android:text="اصدار دفتر عائلة لاول مرة"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
             <LinearLayout

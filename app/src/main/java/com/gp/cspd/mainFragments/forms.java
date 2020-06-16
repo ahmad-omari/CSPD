@@ -129,12 +129,6 @@ public class forms extends Fragment {
             }
         });
 
-
-
-
-
-
-
         return view;
     }
 

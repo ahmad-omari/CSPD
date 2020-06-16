@@ -32,7 +32,9 @@ import android.widget.Toast;
 
 import com.gp.cspd.Database.DatabaseController;
 import com.gp.cspd.Database.DatabaseUserImage;
+import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
+import com.gp.cspd.deathCertificate.deathForms;
 import com.gp.cspd.login.login_page;
 import com.gp.cspd.userInformation.Address;
 import com.gp.cspd.userInformation.User;
@@ -318,15 +320,18 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
     }
 
     public void uploadImages(){
-        UserAccount account = userAccountInformation.getUserAccount();
+        if (Uri_auth_pic!=null && Uri_signature!=null && Uri_profile_pic!=null) {
+            UserAccount account = userAccountInformation.getUserAccount();
 
-        String signatureImageName= account.getSsn()+"signature."+getExtention(Uri_signature);
-        String authImageName= account.getSsn()+"Authentication."+getExtention(Uri_auth_pic);
-        String profilePicImageName= account.getSsn()+"profilePicture."+getExtention(Uri_profile_pic);
+            String signatureImageName = account.getSsn() + "signature." + getExtention(Uri_signature);
+            String authImageName = account.getSsn() + "Authentication." + getExtention(Uri_auth_pic);
+            String profilePicImageName = account.getSsn() + "profilePicture." + getExtention(Uri_profile_pic);
 
-        DatabaseUserImage signatureUserImage = new DatabaseUserImage(signatureImageName,Uri_signature);
-        DatabaseUserImage authUserImage = new DatabaseUserImage(authImageName,Uri_auth_pic);
-        DatabaseUserImage profilePicUserImage = new DatabaseUserImage(profilePicImageName,Uri_profile_pic);
+            DatabaseUserImage signatureUserImage = new DatabaseUserImage(signatureImageName, Uri_signature);
+            DatabaseUserImage authUserImage = new DatabaseUserImage(authImageName, Uri_auth_pic);
+            DatabaseUserImage profilePicUserImage = new DatabaseUserImage(profilePicImageName, Uri_profile_pic);
+        }else
+            Toast.makeText(getApplicationContext(),"الرجاء ادخال جميع الصور المطلوبه",Toast.LENGTH_LONG).show();
 
     }
 
@@ -346,9 +351,75 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
         uploadImages();
         uploadUserInfo();
 
-        Toast.makeText(getApplicationContext(),"Account created",Toast.LENGTH_LONG).show();
-        startActivity(new Intent(signUp.this,login_page.class));
-        finish();
+        if (Uri_auth_pic!=null && Uri_signature!=null && Uri_profile_pic!=null && ssnET!=null &&
+                 passwordET!=null && confirmPasswordET!=null &&
+        ar_name_1!=null && ar_name_2!=null && ar_name_3!=null && ar_name_4!=null &&
+                en_name_1!=null && en_name_2!=null && en_name_3!=null && en_name_4!=null && (
+                en_name_1.getText().toString().length()>2  || en_name_2.getText().toString().length()>2 || en_name_3.getText().toString().length()>2 || en_name_4.getText().toString().length()>2
+                && emailET!=null && emailET.getText().toString().length()<5 || ssnET.getText().toString().length()==10
+    || passwordET.getText().toString().length()<6
+        ||confirmPasswordET.getText().toString().length()<6 ||
+        ar_name_1.getText().toString().length()>2  || ar_name_2.getText().toString().length()>2 || ar_name_3.getText().toString().length()>2 || ar_name_4.getText().toString().length()>2
+        ) ) {
+
+
+            if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
+                showSuccessDialog();
+            }else {
+                confirmPasswordET.setError("");
+            }
+        }else{
+            if (ssnET==null || ssnET.length()!=10)
+                ssnET.setError("");
+
+            if (passwordET==null || passwordET.length()<6)
+                passwordET.setError("");
+
+            if (confirmPasswordET==null || confirmPasswordET.length()<6)
+                confirmPasswordET.setError("");
+
+            if (ar_name_1==null || ar_name_1.length()<2)
+                ar_name_1.setError("");
+
+            if (ar_name_2==null || ar_name_2.length()<2)
+                ar_name_2.setError("");
+
+            if (ar_name_3==null || ar_name_3.length()<2)
+                ar_name_3.setError("");
+
+            if (ar_name_4==null || ar_name_4.length()<2)
+                ar_name_4.setError("");
+
+            if (en_name_1==null || en_name_1.length()<2)
+                en_name_1.setError("");
+
+            if (en_name_2==null || en_name_2.length()<2)
+                en_name_2.setError("");
+
+            if (en_name_3==null || en_name_3.length()<2)
+                en_name_3.setError("");
+
+            if (en_name_4==null || en_name_4.length()<2)
+                en_name_4.setError("");
+            if (emailET==null || emailET.getText().toString().length()<5)
+                emailET.setError("");
+        }
+    }
+
+    private void showSuccessDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.success_account);
+        Button btn = dialog.findViewById(R.id.done);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(signUp.this, login_page.class));
+                finish();
+            }
+        });
+        dialog.show();
+
     }
 
     private void fillData() {
@@ -401,21 +472,41 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
             userAccountInformation.setGender(gender);
 
             Address address = new Address();
-            address.setBanner(lewaSTR);
-            address.setNeighborhood(haySTR);
-            address.setNearestNeighborhood(nearestNeighborSTR);
-            address.setComplex(neighbor_complexSTR);
-            address.setStreetName(streetNameSTR);
-            address.setBuildingNO(buildingNoInt);
-            address.setGovernorate(governorateSTR);
+            if (lewaSTR!=null && haySTR!=null && nearestNeighborSTR!=null && neighbor_complexSTR!=null && streetNameSTR!=null
+            && buildingNoInt!=0 && governorateSTR!=null) {
+                address.setBanner(lewaSTR);
+                address.setNeighborhood(haySTR);
+                address.setNearestNeighborhood(nearestNeighborSTR);
+                address.setComplex(neighbor_complexSTR);
+                address.setStreetName(streetNameSTR);
+                address.setBuildingNO(buildingNoInt);
+                address.setGovernorate(governorateSTR);
+                userAccountInformation.setUserAddress(address);
+            }
 
-            userAccountInformation.setUserAddress(address);
         }
 
     }
 
     public void uploadUserInfo(){
         DatabaseController uploadUserInfo = new DatabaseController();
-        uploadUserInfo.addUser(userAccountInformation);
+
+        String lewaSTR = lewa.getText().toString().trim();
+        String haySTR = hay.getText().toString().trim();
+        String neighbor_complexSTR = neighbor_complex.getText().toString().trim();
+        String streetNameSTR = streetName.getText().toString().trim();
+        String BuildingNOSTR = BuildingNO.getText().toString().trim();
+        String nearestNeighborSTR = nearestNeighbor.getText().toString().trim();
+        int buildingNoInt=0;
+        try {
+            buildingNoInt = Integer.parseInt(BuildingNOSTR);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        if (lewaSTR!=null && haySTR!=null && nearestNeighborSTR!=null && neighbor_complexSTR!=null && streetNameSTR!=null
+                && buildingNoInt!=0 && governorateSTR!=null) {
+            uploadUserInfo.addUser(userAccountInformation);
+        }
     }
 }

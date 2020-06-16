@@ -2,9 +2,12 @@ package com.gp.cspd.deathCertificate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 
 import com.gp.cspd.Database.DatabaseForm;
 import com.gp.cspd.MainActivity;
@@ -38,10 +41,24 @@ public class deathForms extends AppCompatActivity implements View.OnClickListene
 
             case R.id.first_time_death_certificate:
                 uploadForm();
-                startActivity(new Intent(deathForms.this, MainActivity.class));
-                finish();
+                showSuccessDialog();
                 break;
         }
+    }
+
+    private void showSuccessDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.accepted_form_dialog);
+        Button btn = dialog.findViewById(R.id.done);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(deathForms.this, MainActivity.class));
+                finish();
+            }
+        });
+        dialog.show();
     }
 
     private void uploadForm() {

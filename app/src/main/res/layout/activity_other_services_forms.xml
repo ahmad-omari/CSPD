@@ -60,32 +60,13 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/colorDark"
-                    android:text="خدمات أخرى"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <RelativeLayout
+                    android:textAlignment="center"
+                    android:text="لا يوجد خدمات أخرى متاحه"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/right"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layerType="software"
-                    android:src="@drawable/dash"/>
-            </LinearLayout>
 
 
         </LinearLayout>

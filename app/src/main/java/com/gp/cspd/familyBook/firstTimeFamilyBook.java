@@ -23,6 +23,7 @@ import com.gp.cspd.Database.DatabaseUserImage;
 import com.gp.cspd.IdCard.damagedReplacementCard;
 import com.gp.cspd.MainActivity;
 import com.gp.cspd.R;
+import com.gp.cspd.birthCertificate.birthForms;
 import com.gp.cspd.forms.FormDialog;
 import com.gp.cspd.passport.damagedPassport;
 
@@ -114,9 +115,25 @@ public class firstTimeFamilyBook extends AppCompatActivity implements View.OnCli
         }else {
             uploadImages();
             setFormDB("first time");
-            Toast.makeText(getApplicationContext(),"Submitted successfully",Toast.LENGTH_LONG).show();
+            showSuccessDialog();
         }
     }
+
+    private void showSuccessDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.accepted_form_dialog);
+        Button btn = dialog.findViewById(R.id.done);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(firstTimeFamilyBook.this, MainActivity.class));
+                finish();
+            }
+        });
+        dialog.show();
+    }
+
     private void setFormDB(String fName) {
         DatabaseForm databaseForm = new DatabaseForm();
         databaseForm.setOrderName("Family Book");

@@ -94,49 +94,61 @@ public class User {
 
 
     public void setNameEnglish4Parts(String first,String second,String third,String last) {
-        this.nameEnglish4Parts[0] = first;
-        this.nameEnglish4Parts[1] = second;
-        this.nameEnglish4Parts[2] = third;
-        this.nameEnglish4Parts[3] = last;
+        if (first!=null && second!=null && third!=null && last!=null) {
+            this.nameEnglish4Parts[0] = first;
+            this.nameEnglish4Parts[1] = second;
+            this.nameEnglish4Parts[2] = third;
+            this.nameEnglish4Parts[3] = last;
+        }
     }
 
     public void setNameArabic4Parts(String first,String second,String third,String last) {
-        this.nameArabic4Parts[0] = first;
-        this.nameArabic4Parts[1] = second;
-        this.nameArabic4Parts[2] = third;
-        this.nameArabic4Parts[3] = last;
+        if (first!=null && second!=null && third!=null && last!=null) {
+            this.nameArabic4Parts[0] = first;
+            this.nameArabic4Parts[1] = second;
+            this.nameArabic4Parts[2] = third;
+            this.nameArabic4Parts[3] = last;
+        }
     }
 
     public void setMothersNameEnglish(String mothersNameEnglish) {
-        this.mothersNameEnglish = mothersNameEnglish;
+        if (mothersNameEnglish!=null )
+            this.mothersNameEnglish = mothersNameEnglish;
     }
 
     public void setMothersNameArabic(String mothersNameArabic) {
-        this.mothersNameArabic = mothersNameArabic;
+        if (mothersNameArabic!=null )
+            this.mothersNameArabic = mothersNameArabic;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        if (gender!=null )
+            this.gender = gender;
     }
 
     public void setBirthPlace(String birthPlace) {
-        this.birthPlace = birthPlace;
+        if (birthPlace!=null )
+            this.birthPlace = birthPlace;
     }
 
     public void setLivingPlace(String livingPlace) {
-        this.livingPlace = livingPlace;
+        if (livingPlace!=null )
+            this.livingPlace = livingPlace;
     }
 
     public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
+        if (bloodType!=null )
+            this.bloodType = bloodType;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email!=null )
+            this.email = email;
     }
 
     public void setPhoneNO(int phoneNO) {
-        this.phoneNO = phoneNO;
+        if (phoneNO!=0 )
+            this.phoneNO = phoneNO;
     }
 
     public void setUserAddress(Address userAddress) {
