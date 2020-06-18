@@ -6,23 +6,23 @@
 
 
         <TextView
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:id="@+id/type_name"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="form type" />
 
         <TextView
             android:id="@+id/status"
-            android:layout_toRightOf="@+id/type_name"
-            android:layout_width="100dp"
+            android:layout_toLeftOf="@+id/type_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="in process" />
 
         <ImageView
             android:id="@+id/btn_form_img"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_format_shapes_black_24dp" />

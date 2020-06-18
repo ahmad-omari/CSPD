@@ -23,6 +23,9 @@ public class RecycleViewForm extends RecyclerView.Adapter<RecycleViewForm.ViewHo
     private String order=null;
     private String type=null;
 
+    private String order2=null;
+    private String type2=null;
+
     public RecycleViewForm(List<RequestFormDB> requestFormDBList) {
         this.requestFormDBList = requestFormDBList;
     }
@@ -49,11 +52,7 @@ public class RecycleViewForm extends RecyclerView.Adapter<RecycleViewForm.ViewHo
         // Set item views based on your views and data model
 
 
-        holder.formName.setText(formDB.getFormName());
-        holder.statusRes.setText(formDB.getStatus());
 
-        Log.d("test1",formDB.getFormName());
-        Log.d("test2",formDB.getStatus());
 
         if (formDB.getFormName() != null){
             String arSTR[] = formDB.getFormName().split("\\s");
@@ -61,14 +60,130 @@ public class RecycleViewForm extends RecyclerView.Adapter<RecycleViewForm.ViewHo
             if (arSTR.length == 2){
                 order=arSTR[0];
                 type=arSTR[1];
+
+
+                if (order.equals("renew")){
+                    order2="تجديد";
+                }
+                if (order.equals("damaged")){
+                    order2="بدل تالف";
+                }
+                if (order.equals("lost")){
+                    order2="بدل فاقد";
+                }
+                if (type.equals("Passport")){
+                    type2="جواز سفر";
+                }
+                if (type.equals("Family Book")){
+                    type2="دفتر عائلة";
+                }
+                if (type.equals("ID Card")){
+                    type2="هويه مدنية";
+                }
+                if (order.equals("damaged or replacement")){
+                    order2="بدل تالف او فاقد";
+                }
+                if (order.equals("first time")){
+                    order2="لأول مره";
+                }
+                if (type.equals("Birth Certificate")){
+                    type2="شهاده ميلاد";
+                }
+
+                if (type.equals("Death Certificate")){
+                    type2="شهاده وفاه";
+                }
+
             }else if (arSTR.length == 3){
-                order=arSTR[0]+" "+arSTR[1];
-                type=arSTR[2];
+                order=arSTR[0];//+" "+arSTR[1];
+                type=arSTR[1]+" "+arSTR[2];
+
+                if (order.equals("renew")){
+                    order2="تجديد";
+                }
+                if (order.equals("damaged")){
+                    order2="بدل تالف";
+                }
+                if (order.equals("lost")){
+                    order2="بدل فاقد";
+                }
+                if (type.equals("Passport")){
+                    type2="جواز سفر";
+                }
+                if (type.equals("Family Book")){
+                    type2="دفتر عائلة";
+                }
+                if (type.equals("ID Card")){
+                    type2="هويه مدنية";
+                }
+                if (order.equals("damaged or replacement")){
+                    order2="بدل تالف او فاقد";
+                }
+                if (order.equals("first time")){
+                    order2="لأول مره";
+                }
+                if (type.equals("Birth Certificate")){
+                    type2="شهاده ميلاد";
+                }
+
+                if (type.equals("Death Certificate")){
+                    type2="شهاده وفاه";
+                }
             }else if (arSTR.length == 4){
                 order=arSTR[0]+" "+arSTR[1];
                 type=arSTR[2]+" "+arSTR[3];
+
+                if (order.equals("renew")){
+                    order2="تجديد";
+                }
+                if (order.equals("damaged")){
+                    order2="بدل تالف";
+                }
+                if (order.equals("lost")){
+                    order2="بدل فاقد";
+                }
+                if (type.equals("Passport")){
+                    type2="جواز سفر";
+                }
+                if (type.equals("Family Book")){
+                    type2="دفتر عائلة";
+                }
+                if (type.equals("ID Card")){
+                    type2="هويه مدنية";
+                }
+                if (order.equals("damaged or replacement")){
+                    order2="بدل تالف او فاقد";
+                }
+                if (order.equals("first time")){
+                    order2="لأول مره";
+                }
+                if (type.equals("Birth Certificate")){
+                    type2="شهاده ميلاد";
+                }
+
+                if (type.equals("Death Certificate")){
+                    type2="شهاده وفاه";
+                }
             }
         }
+
+      //  holder.formName.setText(formDB.getFormName());
+      //  holder.statusRes.setText(formDB.getStatus());
+
+        holder.formName.setText(order2+" "+type2);
+        String st="";
+        if (formDB.getStatus().equals("in process")){
+            st="قيد التدقيق";
+        }if (formDB.getStatus().equals("Accepted")){
+            st="مقبول";
+        }if (formDB.getStatus().equals("Not Accept")){
+            st="مرفوض";
+        }
+        holder.statusRes.setText(st);
+
+        Log.d("test1",formDB.getFormName());
+        Log.d("test2",formDB.getStatus());
+
         ImageView imgV = holder.formImageView;
         imgV.setOnClickListener(new View.OnClickListener() {
             @Override

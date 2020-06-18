@@ -320,7 +320,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
     }
 
     public void uploadImages(){
-        if (Uri_auth_pic!=null && Uri_signature!=null && Uri_profile_pic!=null) {
+        if (Uri_auth_pic!=null && Uri_signature!=null && Uri_profile_pic!=null && userAccountInformation!=null) {
             UserAccount account = userAccountInformation.getUserAccount();
 
             String signatureImageName = account.getSsn() + "signature." + getExtention(Uri_signature);
@@ -348,60 +348,57 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
 
     public void signUp(){
         fillData();
+       // uploadUserInfo();
         uploadImages();
-        uploadUserInfo();
-
         if (Uri_auth_pic!=null && Uri_signature!=null && Uri_profile_pic!=null && ssnET!=null &&
                  passwordET!=null && confirmPasswordET!=null &&
         ar_name_1!=null && ar_name_2!=null && ar_name_3!=null && ar_name_4!=null &&
                 en_name_1!=null && en_name_2!=null && en_name_3!=null && en_name_4!=null && (
-                en_name_1.getText().toString().length()>2  || en_name_2.getText().toString().length()>2 || en_name_3.getText().toString().length()>2 || en_name_4.getText().toString().length()>2
-                && emailET!=null && emailET.getText().toString().length()<5 || ssnET.getText().toString().length()==10
-    || passwordET.getText().toString().length()<6
-        ||confirmPasswordET.getText().toString().length()<6 ||
-        ar_name_1.getText().toString().length()>2  || ar_name_2.getText().toString().length()>2 || ar_name_3.getText().toString().length()>2 || ar_name_4.getText().toString().length()>2
-        ) ) {
+                en_name_1.getText().toString().length()>2  && en_name_2.getText().toString().length()>2 && en_name_3.getText().toString().length()>2 && en_name_4.getText().toString().length()>2
+                && emailET!=null && emailET.getText().toString().length()<5 && ssnET.getText().toString().length()==10
+                        && passwordET.getText().toString().length()>6
+                        &&confirmPasswordET.getText().toString().length()>6 &&
+        ar_name_1.getText().toString().length()>2  && ar_name_2.getText().toString().length()>2 && ar_name_3.getText().toString().length()>2 && ar_name_4.getText().toString().length()>2
+        )
+        ) {
+            showSuccessDialog();
 
+        }else{if (!passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
+            confirmPasswordET.setError("غير مطابق");
+        }
 
-            if (passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
-                showSuccessDialog();
-            }else {
-                confirmPasswordET.setError("غير مطابق");
-            }
-        }else{
             if (ssnET==null || ssnET.length()!=10)
                 ssnET.setError("الرجاء ادخال عشر خانات");
-
-            if (passwordET==null || passwordET.length()<6)
+             if (passwordET==null || passwordET.length()<6)
                 passwordET.setError("الرجاء ادخال ست خانات على الاقل");
 
-            if (confirmPasswordET==null || confirmPasswordET.length()<6)
+             if (confirmPasswordET==null || confirmPasswordET.length()<6)
                 confirmPasswordET.setError("الرجاء ادخال ست خانات على الاقل");
 
-            if (ar_name_1==null || ar_name_1.length()<2)
+             if (ar_name_1==null || ar_name_1.length()<2)
                 ar_name_1.setError("");
 
-            if (ar_name_2==null || ar_name_2.length()<2)
+             if (ar_name_2==null || ar_name_2.length()<2)
                 ar_name_2.setError("");
 
-            if (ar_name_3==null || ar_name_3.length()<2)
+             if (ar_name_3==null || ar_name_3.length()<2)
                 ar_name_3.setError("");
 
-            if (ar_name_4==null || ar_name_4.length()<2)
+             if (ar_name_4==null || ar_name_4.length()<2)
                 ar_name_4.setError("");
 
-            if (en_name_1==null || en_name_1.length()<2)
+             if (en_name_1==null || en_name_1.length()<2)
                 en_name_1.setError("");
 
-            if (en_name_2==null || en_name_2.length()<2)
+             if (en_name_2==null || en_name_2.length()<2)
                 en_name_2.setError("");
 
-            if (en_name_3==null || en_name_3.length()<2)
+             if (en_name_3==null || en_name_3.length()<2)
                 en_name_3.setError("");
 
-            if (en_name_4==null || en_name_4.length()<2)
+             if (en_name_4==null || en_name_4.length()<2)
                 en_name_4.setError("");
-            if (emailET==null || emailET.getText().toString().length()<5)
+             if (emailET==null || emailET.getText().toString().length()<5)
                 emailET.setError("");
         }
     }
@@ -482,6 +479,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener ,
                 address.setBuildingNO(buildingNoInt);
                 address.setGovernorate(governorateSTR);
                 userAccountInformation.setUserAddress(address);
+                uploadUserInfo();
             }
 
         }
